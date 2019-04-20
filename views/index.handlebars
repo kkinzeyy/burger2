@@ -1,0 +1,24 @@
+{{> header }}
+
+<div class="container content">
+    <h1>burger app</h1>
+
+    <form>
+        <div class="form-group">
+            <input type="text" required placeholder="Add a burger" class="form-control" name="burger_name">
+        </div>
+        <button type="submit" class="btn btn-default">Add burger</button>
+    </form>
+
+    <div class="content-burger">
+        {{#each burgers}}
+        <div class="content-burger__list" id={{id}}>
+            <img src='./images/lefteris-kallergis-581884-unsplash.jpg' alt="">
+            <p>{{burger_name}}</p>
+            <button class="btn btn-default favorites" data-id="{{id}}" data-state="{{is_favorite}}">
+                {{#if is_favorite}} unfavorite {{else}} add to favorites {{/if}}
+            </button>
+        </div>
+        {{/each}}
+    </div>
+</div>

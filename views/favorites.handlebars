@@ -1,0 +1,16 @@
+{{> header }}
+
+<div class="main-favorites">
+    <h2>all your favorites!</h2>
+    <div class="main-favorites__burgers">
+        {{#each burgers}}
+        <div class="content-burger__list" id={{id}}>
+            <img src='./images/lefteris-kallergis-581884-unsplash.jpg' alt="">
+            <p>{{burger_name}}</p>
+            <button class="btn btn-default favorites" data-id="{{id}}" data-state="{{is_favorite}}">
+                {{#if is_favorite}} unfavorite {{else}} add to favorites {{/if}}
+            </button>
+        </div>
+        {{/each}}
+    </div>
+</div>
